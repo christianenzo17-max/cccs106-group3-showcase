@@ -54,7 +54,7 @@ def get_initial_team() -> List[TeamMember]:
             student_id="[Dev 1.2] 2412913",  # example: "2024-10123"
             full_name="[Dev 1.2] Arvin Joshua V. Opiana", # example: "Maria Clara Santos"
             role="Frontend UI Developer",
-            specialization="Flet Reactive Widgets & Material 3 Layouts",
+            specialization="Flet Reactive Widgets & Material 3 Layouts and Design Systems Implementation & Accessibility",
             github_handle="@Rvin1205",          # example: "@mariaclara-cspc"
             avatar_icon=ft.Icons.PALETTE,
             accent_color=ft.Colors.TEAL_700,
