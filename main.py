@@ -11,6 +11,7 @@
 
 import sys
 import flet as ft
+import flet_audio as fta
 from team_profiles import get_initial_team, build_profile_card, TeamMember
 
 
@@ -111,7 +112,7 @@ def main(page: ft.Page):
 
     # --- [DEVELOPER 2 & 3 COLLABORATIVE SECTION] ---
     # Sprint Task State & Goal Progress
-    SPRINT_GOAL = 5
+    SPRINT_GOAL = 10
 
     # [Developer 2 Control]
     counter_label = ft.Text(
@@ -140,6 +141,36 @@ def main(page: ft.Page):
         ),
     )
 
+        # --- Haptics & Audio Services ---
+    haptics = ft.HapticFeedback()
+
+    task_complete_sound = fta.Audio(
+        src="assets/audio/animewowsound.mp3",  # swap for a short "click"/"ding" sound
+        autoplay=False,
+    )
+
+    task_success_sound = fta.Audio(
+            src="assets/audio/success2.mp3",  # swap for a short "click"/"ding" sound
+            autoplay=False,
+        )
+
+    task_retry_sound = fta.Audio(
+            src="assets/audio/stevesound.mp3",  # swap for a short "click"/"ding" sound
+            autoplay=False,
+        )
+
+
+    goal_met_sound = fta.Audio(
+        src="assets/audio/coffinsound.mp3",  # swap for a "success" chime
+        autoplay=False,
+    )
+
+    page.services.append(haptics)
+    page.services.append(task_complete_sound)
+    page.services.append(task_success_sound)
+    page.services.append(task_retry_sound)
+    page.services.append(goal_met_sound)
+
     # ==========================================================================
     # 4. EVENT HANDLERS (Collaborative Logic Integration)
     # ==========================================================================
@@ -154,32 +185,49 @@ def main(page: ft.Page):
             goal_status_badge.color = ft.Colors.OUTLINE
             task_increment_btn.disabled = False
 
-    # [Developer 2 Handler]
-    def handle_increment_task(e):
+        # [Developer 2 Handler]
+    async def handle_increment_task(e):
         nonlocal tasks_completed_count
-        # Boundary Constraint: strictly cap at SPRINT_GOAL (maximum 5)
         if tasks_completed_count < SPRINT_GOAL:
-            tasks_completed_count += 1
+            tasks_completed_count += 2
             counter_label.value = f"Sprint Tasks Completed: {tasks_completed_count}"
             update_goal_progress()
+
+            if tasks_completed_count >= SPRINT_GOAL:
+                await haptics.heavy_impact()
+                await task_success_sound.play()
+                await goal_met_sound.play()
+            else:
+                await haptics.light_impact()
+                await task_complete_sound.play()
+
             page.update()
 
     # [Developer 2 Handler]
-    def handle_reset_counter(e):
+    async def handle_reset_counter(e):
         nonlocal tasks_completed_count
         tasks_completed_count = 0
         counter_label.value = f"Sprint Tasks Completed: {tasks_completed_count}"
         update_goal_progress()
+
+        # Stop the success sound if it's still playing
+        await goal_met_sound.pause()
+        await goal_met_sound.seek(ft.Duration(seconds=0))
+
+        await haptics.medium_impact()
+        await task_retry_sound.play()
         page.update()
 
     task_increment_btn.on_click = handle_increment_task
 
     # [Developer 3 Handler]
-    def handle_theme_toggle(e):
+
+    async def handle_theme_toggle(e):
         if theme_switch.value:
             page.theme_mode = ft.ThemeMode.DARK
         else:
             page.theme_mode = ft.ThemeMode.LIGHT
+        await haptics.selection_click()
         page.update()
 
     theme_switch = ft.Switch(
