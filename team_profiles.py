@@ -45,7 +45,7 @@ def get_initial_team() -> List[TeamMember]:
             full_name="[Dev 1] Christian Enzo R. Sta. Cruz", # example: "Maria Clara Santos"
             role="Lead Frontend UI Developer",
             specialization="Flet Reactive Widgets & Material 3 Layouts",
-            github_handle="@Rvin1205",          # example: "@mariaclara-cspc"
+            github_handle="@dev1-christianenzo17-max",          # example: "@mariaclara-cspc"
             avatar_icon=ft.Icons.PALETTE,
             accent_color=ft.Colors.TEAL_700,
             photo_url="https://avatars.githubusercontent.com/u/322104563?v=4",                 # Photo: local asset or URL (e.g. "https://github.com/dev1-github.png")
@@ -53,9 +53,9 @@ def get_initial_team() -> List[TeamMember]:
           TeamMember(
             student_id="[Dev 1.2] 2412913",  # example: "2024-10123"
             full_name="[Dev 1.2] Arvin Joshua V. Opiana", # example: "Maria Clara Santos"
-            role="Lead Frontend UI Developer 2",
+            role="Frontend UI Developer 2",
             specialization="Flet Reactive Widgets & Material 3 Layouts",
-            github_handle="@dev1-christianenzo17-max",          # example: "@mariaclara-cspc"
+            github_handle="@Rvin1205",          # example: "@mariaclara-cspc"
             avatar_icon=ft.Icons.PALETTE,
             accent_color=ft.Colors.TEAL_700,
             photo_url="https://avatars.githubusercontent.com/u/324363537?v=4",                 # Photo: local asset or URL (e.g. "https://github.com/dev1-github.png")
