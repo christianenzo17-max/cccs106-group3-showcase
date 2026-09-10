@@ -50,19 +50,29 @@ def get_initial_team() -> List[TeamMember]:
             accent_color=ft.Colors.TEAL_700,
             photo_url="https://avatars.githubusercontent.com/u/322104563?v=4",                 # Photo: local asset or URL (e.g. "https://github.com/dev1-github.png")
         ),
+          TeamMember(
+            student_id="[Dev 1.2] 2412913",  # example: "2024-10123"
+            full_name="[Dev 1.2] Arvin Joshua V. Opiana", # example: "Maria Clara Santos"
+            role="Lead Frontend UI Developer 2",
+            specialization="Flet Reactive Widgets & Material 3 Layouts",
+            github_handle="@dev1-christianenzo17-max",          # example: "@mariaclara-cspc"
+            avatar_icon=ft.Icons.PALETTE,
+            accent_color=ft.Colors.TEAL_700,
+            photo_url="https://avatars.githubusercontent.com/u/322104563?v=4",                 # Photo: local asset or URL (e.g. "https://github.com/dev1-github.png")
+        ),
         # ----------------------------------------------------------------------
         # TODO: [DEVELOPER 2 TASK] - Branch: feature/dev2-state
         # Replace Developer 2 profile with your real student details:
         # ----------------------------------------------------------------------
         TeamMember(
-            student_id="[Dev 2] Student ID Here",  # example: "2024-10456"
-            full_name="[Dev 2] Student Name Here", # example: "Juan Dela Cruz"
+            student_id="[Dev 2] 2410595",  # example: "2024-10456"
+            full_name="[Dev 2] Jian F. Alvarez", # example: "Juan Dela Cruz"
             role="Backend & State Engineer",
             specialization="State Mutation & Event Handlers",
-            github_handle="@dev2-github",          # example: "@jdelacruz-cspc"
+            github_handle="@jiannxyz ",          # example: "@jdelacruz-cspc"
             avatar_icon=ft.Icons.DATA_OBJECT,
             accent_color=ft.Colors.AMBER_800,
-            photo_url="/dev2.jpg",                 # Photo: local asset or URL (e.g. "https://github.com/dev2-github.png")
+            photo_url="https://avatars.githubusercontent.com/u/223217547?v=4",                 # Photo: local asset or URL (e.g. "https://github.com/dev2-github.png")
         ),
         # ----------------------------------------------------------------------
         # TODO: [DEVELOPER 3 TASK] - Branch: feature/dev3-features
