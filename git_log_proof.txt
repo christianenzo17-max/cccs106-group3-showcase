@@ -1,0 +1,25 @@
+* 2654a6f Move the CCCS106_Lab01_Report_Template.docx
+| *   0320542 Merge branch 'feature/dev2-state'
+| |\  
+| |/  
+|/|   
+* | e440469 Add audio files
+| *   90270de Merge branch 'feature/dev2-state'
+| |\  
+| |/  
+|/|   
+* | eea1905 Update Developer2 Profile Card
+* | 4214f09 Add: Audio or Haptics Hints in the buttons
+| * 1dff766 update profile card
+| * e59b81f Feat(profile): integrate developer 1.2 profile card
+|/  
+| * 869fd63 Agent host session 8e2f7914-cd47-43be-a7b6-b3cd14be411e - turn 1
+| * 31fe226 Agent host session 8e2f7914-cd47-43be-a7b6-b3cd14be411e - turn 1 start
+| * ddf9e97 Agent host session 8e2f7914-cd47-43be-a7b6-b3cd14be411e - baseline checkpoint
+| * 02752e0 Agent Host changes for agents/add-feedback-sounds-increment-retry
+|/  
+* 33b8e3b feat(milestone): integrate developer 3 profile and sprint goal milestone badge
+* e6e526a chore(init): baseline repository with modern flet app and verification tool
+* 864fdc3 Agent host session 52979430-fbb7-4b99-b2a4-ec34a3907989 - turn 1
+* 8fe63a9 Agent host session 52979430-fbb7-4b99-b2a4-ec34a3907989 - turn 1 start
+* 1573c36 Agent host session 52979430-fbb7-4b99-b2a4-ec34a3907989 - baseline checkpoint
